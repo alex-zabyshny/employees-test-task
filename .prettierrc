@@ -1,0 +1,31 @@
+{
+	"printWidth": 120,
+	"arrowParens": "always",
+	"semi": true,
+	"useTabs": true,
+	"tabWidth": 4,
+	"bracketSpacing": false,
+	"bracketSameLine": false,
+	"singleQuote": true,
+	"trailingComma": "es5",
+	"overrides": [
+		{
+			"files": [".prettierrc"],
+			"options": {
+				"parser": "json"
+			}
+		},
+		{
+			"files": ["package.json"],
+			"options": {
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		}
+	],
+	"plugins": ["@trivago/prettier-plugin-sort-imports"],
+	"importOrderParserPlugins": ["typescript", "jsx", "decorators"],
+	"importOrder": ["^@(.*)/(.*)$", "<THIRD_PARTY_MODULES>", "^[./]"],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
+}

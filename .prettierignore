@@ -1,0 +1,9 @@
+node_modules
+.eslintcache
+.ts-node
+.vscode
+.DS_Store
+dist
+package-lock.json
+pnpm-lock.yaml
+*.html

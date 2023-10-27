@@ -1,0 +1,10 @@
+node_modules
+.eslintcache
+.ts-node
+.vscode
+.DS_Store
+dist
+config/.env
+package-lock.json
+*.log
+tmp

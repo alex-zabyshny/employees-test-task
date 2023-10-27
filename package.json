@@ -1,0 +1,49 @@
+{
+  "name": "employees-test-task",
+  "version": "1.0.0",
+  "description": "Employees donations test task",
+  "main": "./src/app.ts",
+  "engines": {
+    "node": "18.16.0",
+    "pnpm": "8.7.5"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "preinstall": "npx -y only-allow pnpm",
+    "start": "ts-node ./src/import/index.ts",
+    "build": "tsc -b",
+    "pretty:base": "prettier .",
+    "pretty:check": "pnpm pretty:base --check",
+    "pretty:fix": "pnpm pretty:base --write",
+    "lint:check": "eslint --cache --max-warnings=0 .",
+    "lint:fix": "pnpm lint:check --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Proprietary Software License",
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --cache --max-warnings=0 . --fix",
+      "prettier --write"
+    ],
+    "*.{json,yaml,md,eslintrc}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.2.0",
+    "@types/node": "20.5.4",
+    "@typescript-eslint/eslint-plugin": "6.4.1",
+    "eslint": "8.47.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.28.1",
+    "eslint-plugin-no-only-tests": "3.1.0",
+    "eslint-plugin-no-param-reassign-allow-reduce": "1.0.2",
+    "eslint-plugin-sonarjs": "0.21.0",
+    "husky": "8.0.3",
+    "lint-staged": "14.0.1",
+    "prettier": "3.0.2",
+    "ts-node": "10.9.1",
+    "typescript": "5.1.6"
+  }
+}
