@@ -42,22 +42,22 @@ export default class Parser {
 		const result: Record<string, any> = {};
 
 		for (const {line, childs} of lineObjects) {
-			const [key, value] = line.split(':').map((el) => el.trim());
+			const [key, value] = line.includes(':') ? line.split(':') : [line];
 
-			if (value) {
-				result[key] = value;
+			if (value !== undefined) {
+				result[key] = value.trim();
 			} else {
 				const processedElements = this.buildChilds(childs);
 
-				if (!result[line]) {
-					result[line] = processedElements;
+				if (!result[key]) {
+					result[key] = processedElements;
 				} else {
-					if (!Array.isArray(result[line])) {
-						result[line] = [result[line]];
+					if (!Array.isArray(result[key])) {
+						result[key] = [result[key]];
 					}
 
 					/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-					result[line].push(processedElements);
+					result[key].push(processedElements);
 				}
 			}
 		}
